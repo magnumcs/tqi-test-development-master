@@ -8,6 +8,7 @@ import br.com.tqi.test.development.model.dto.AddressDTO;
 import br.com.tqi.test.development.model.dto.ClientDTO;
 import br.com.tqi.test.development.service.TestService;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -48,7 +49,7 @@ public class TestController {
 
     @PostMapping(value = "/client/change-address/{id}/")
     public ResponseEntity<Void> changeClientAddress(
-            @PathVariable("id") Long id,
+            @ApiParam("Id do cliente") @PathVariable("id") Long id,
             @RequestBody AddressDTO address) throws EnderecoException {
         testService.changeClientAddress(id, address);
         return ResponseEntity.noContent().build();

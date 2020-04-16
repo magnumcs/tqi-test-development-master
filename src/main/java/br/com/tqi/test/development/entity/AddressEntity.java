@@ -24,28 +24,28 @@ public class AddressEntity implements Serializable {
     private Long id;
 
     @Column(name = "endereco")
-    private String endereco = "";
+    private String endereco;
 
     @Column(name = "numero")
-    private String numero = "";
+    private String numero;
 
     @Column(name = "complemento")
-    private String complemento = "";
+    private String complemento;
 
     @Column(name = "bairro")
-    private String bairro = "";
+    private String bairro;
 
     @Column(name = "cidade")
-    private String cidade = "";
+    private String cidade;
 
     @Column(name = "estado")
-    private String estado = "";
+    private String estado;
 
     @Column(name = "pais")
-    private String pais = "";
+    private String pais;
 
     @Column(name = "cep")
-    private String cep = "";
+    private String cep;
 
     @OneToOne(mappedBy = "addressEntity")
     private ClientEntity client;
