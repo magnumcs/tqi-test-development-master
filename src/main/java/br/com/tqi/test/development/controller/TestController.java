@@ -24,8 +24,12 @@ import java.util.List;
 @RequestMapping("/test-tqi")
 public class TestController {
 
+    private final TestService testService;
+
     @Autowired
-    private TestService testService;
+    public TestController(TestService testService) {
+        this.testService = testService;
+    }
 
     @GetMapping(value = "/client")
     public ResponseEntity<List<ClientDTO>> getAllClient() {
